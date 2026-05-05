@@ -11,9 +11,9 @@ export default function MissionSection() {
           leitura e educação.
         </p>
 
-        <button className="bg-[#1B56AE] text-white px-8 py-3 rounded-xl shadow">
-          Conheça nossa história
-        </button>
+        <button className="bg-[#1B56AE] text-white px-8 py-3 rounded-xl shadow hover:bg-white hover:text-[#1B56AE] hover:shadow-xl transition duration-300">
+         Conheça nossa história
+      </button>
       </div>
     </section>
   )

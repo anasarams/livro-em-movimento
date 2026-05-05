@@ -12,13 +12,13 @@ export default function Hero() {
         </p>
 
         <div className="flex gap-4">
-          <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow">
-            Doar
-          </button>
+        <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl">
+           Doar
+         </button>
 
-          <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow">
-            Contato
-          </button>
+         <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl">
+          Contato
+         </button>
         </div>
       </div>
 

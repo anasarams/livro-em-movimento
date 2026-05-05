@@ -10,13 +10,13 @@ export default function CTASection() {
       </p>
 
       <div className="flex justify-center gap-6">
-        <button className="font-[Gloock] bg-white text-blue-900 px-8 py-3 rounded-xl shadow">
-          Doar
-        </button>
+      <button className="font-[Gloock] bg-white text-[#1B56AE] px-8 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl">
+       Doar
+     </button>
 
-        <button className="font-[Gloock] bg-white text-blue-900 px-8 py-3 rounded-xl shadow">
-          Seja voluntário
-        </button>
+     <button className="font-[Gloock] bg-white text-[#1B56AE] px-8 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl">
+       Seja voluntário
+    </button>
       </div>
     </section>
   )

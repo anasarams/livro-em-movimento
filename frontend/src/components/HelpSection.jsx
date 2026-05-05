@@ -20,8 +20,10 @@ export default function HelpSection() {
             Sua doação transforma vidas. Doe livros ou valores para ajudar o projeto.
           </p>
 
-          <a href="#" className="text-[#D8DFEA] font-medium">
-            Saiba mais
+          <a
+             href="#"
+             className="text-[#D8DFEA] font-medium hover:text-blue-600 transition"
+             >Saiba mais
           </a>
         </div>
 
@@ -34,8 +36,11 @@ export default function HelpSection() {
             Junte-se a nós e transforme vidas participando de nossas ações.
           </p>
 
-          <a href="#" className="text-[#D8DFEA] font-medium">
-            Saiba mais
+          <a
+             href="#"
+             className="text-[#D8DFEA] font-medium hover:text-blue-600 transition"
+             >
+              Saiba mais
           </a>
         </div>
 
@@ -47,9 +52,11 @@ export default function HelpSection() {
           <p className="text-[#000000] mb-6">
             Siga nossas redes sociais e entre em contato para nos acompanhar.
           </p>
-
-          <a href="#" className="text-[#D8DFEA] font-medium">
-            Saiba mais
+          <a
+             href="#"
+             className="text-[#D8DFEA] font-medium hover:text-blue-600 transition"
+             >
+              Saiba mais
           </a>
         </div>
 
