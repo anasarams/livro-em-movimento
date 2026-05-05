@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import HelpSection from './components/HelpSection'
 import MissionSection from './components/MissionSection'
 import CTASection from './components/CTASection'
+import Footer from './components/Footer' 
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <HelpSection />
       <MissionSection />
       <CTASection />
+      <Footer />
     </div>
   )
 }
