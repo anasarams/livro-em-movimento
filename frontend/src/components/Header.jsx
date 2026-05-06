@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <header className="bg-[#1B56AE] text-white px-20 py-5 flex items-center justify-between">
+    <header className="bg-[#FFFFFF] text-[#000000] px-20 py-5 flex items-center justify-between">
 
       <Link
         to="/"
-        className="font-[Gloock] text-2xl font-bold hover:opacity-80"
+        className="font-[Gloock] text-3xl font-bold hover:opacity-80"
       >
         Livro em Movimento
       </Link>
 
       <nav>
-        <ul className="flex gap-12 text-base font-medium">
+        <ul className="flex gap-12 text-base font-bold">
 
           <li>
             <Link to="/" className="hover:opacity-70">
