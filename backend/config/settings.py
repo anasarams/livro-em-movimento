@@ -136,7 +136,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'livro_em_movimento',
         'USER': 'root',
-        'PASSWORD': 'SENHA_BD',
+        'PASSWORD': '0012300',
         'HOST': 'localhost',
         'PORT': '3306',
     }
