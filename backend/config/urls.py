@@ -26,6 +26,6 @@ urlpatterns = [
     path('biblioteca/', include('biblioteca.urls')),
     path('doacao/', include('doacao.urls')),
     path('voluntarios/', include('voluntarios.urls')),
-    # path('contato/', include('contato.urls')),
+    path('contato/', include('contato.urls')),
     path('noticias/', include('noticias.urls')),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
