@@ -17,12 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', include('core.urls')),
-    # path('biblioteca/', include('biblioteca.urls')),
+    path('biblioteca/', include('biblioteca.urls')),
     path('doacao/', include('doacao.urls')),
     path('voluntarios/', include('voluntarios.urls')),
     # path('contato/', include('contato.urls')),
-    # path('noticias/', include('noticias.urls')),
-]
+    path('noticias/', include('noticias.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
