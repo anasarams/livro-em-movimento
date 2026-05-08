@@ -1,3 +1,5 @@
+// App.jsx
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
@@ -9,6 +11,8 @@ import MissionSection from './components/MissionSection'
 import CTASection from './components/CTASection'
 
 import Sobre from './components/Sobre'
+import Voluntarios from './components/Voluntarios'
+import Noticias from './components/Noticias'
 
 function Home() {
   return (
@@ -28,8 +32,21 @@ export default function App() {
       <Header />
 
       <Routes>
+
         <Route path="/" element={<Home />} />
+
         <Route path="/sobre" element={<Sobre />} />
+
+        <Route
+          path="/voluntarios"
+          element={<Voluntarios />}
+        />
+
+        <Route
+          path="/noticias"
+          element={<Noticias />}
+        />
+
       </Routes>
 
       <Footer />
