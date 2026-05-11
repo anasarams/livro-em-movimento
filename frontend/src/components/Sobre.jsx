@@ -5,18 +5,12 @@ import voluntariosImage from '../assets/1.jpeg'
 import foto1 from '../assets/4.jpeg'
 import foto2 from '../assets/2.jpeg'
 import foto3 from '../assets/3.jpeg'
-import foto4 from '../assets/5.jpeg'
-import foto5 from '../assets/6.jpeg'
-import foto6 from '../assets/7.jpeg'
-import foto7 from '../assets/8.jpeg'
-import foto8 from '../assets/9.jpeg'
 
 export default function Sobre() {
 
   const images = [foto1, foto2, foto3]
 
   const [currentImage, setCurrentImage] = useState(0)
-
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,85 +23,113 @@ export default function Sobre() {
   }, [])
 
   return (
-    <div>
+    <div className="bg-[#F8F8F8]">
 
-   
-      <section className="bg-[#C1DFF8] py-12 px-10 text-center">
+      {/* HERO */}
+      <section className="px-10 py-16 flex flex-col md:flex-row items-center justify-center gap-16">
 
-        <h2 className="font-[Gloock] text-5xl font-bold mb-3">
-          Sobre Nós
-        </h2>
+        <div>
+          <h2 className="font-[Gloock] text-5xl mb-6">
+            Sobre Nós
+          </h2>
 
-        <p className="text-gray-600 text-lg">
-          Conheça a história, missão e valores do projeto Livro em Movimento
-        </p>
-
-      </section>
-
-
-      <section className="bg-[#C1DFF8] px-10 pb-16 flex justify-center">
+          <p className="text-gray-600 text-lg max-w-sm leading-relaxed">
+            Conheça a história, missão e valores
+            do projeto livro em movimento
+          </p>
+        </div>
 
         <img
           src={voluntariosImage}
-          alt="Voluntários do projeto"
-          className="w-full max-w-4xl h-[400px] object-cover rounded-[20px] shadow-2xl"
+          alt="Voluntários"
+          className="w-[420px] h-[280px] object-cover rounded-[30px] shadow-lg"
         />
 
       </section>
 
-      <section className="px-10 py-20 flex flex-col md:flex-row items-start gap-12 bg-white">
+      {/* HISTÓRIA */}
+      <section className="px-10 pb-20">
 
-      
-        <div className="w-full md:w-[380px] h-[320px] rounded-[20px] shadow-xl overflow-hidden shrink-0">
+        <div className="bg-[#C1DFF8] rounded-[30px] p-10 shadow-lg max-w-6xl mx-auto">
 
-          <img
-            src={images[currentImage]}
-            alt="Projeto Livro em Movimento"
-            className="w-full h-full object-cover transition duration-700"
-          />
+          <h3 className="font-[Gloock] text-3xl mb-8">
+            Nossa História
+          </h3>
 
-        </div>
+          <div className="flex flex-col lg:flex-row gap-10 items-center">
 
-       
-        <div className="max-w-xl">
+            <div className="w-full lg:w-[350px] h-[300px] rounded-[20px] overflow-hidden shrink-0">
 
-         <h3 className="font-[Gloock] text-5xl font-bold mb-6">
-  Nossa História
-</h3>
+              <img
+                src={images[currentImage]}
+                alt="Projeto Livro em Movimento"
+                className="w-full h-full object-cover"
+              />
 
-<p className="text-gray-700 text-lg leading-relaxed mb-4">
-  A Associação Cultural Livro em Movimento, é uma ONG que tem como missão o incentivo à leitura, a Educação, a Cultura e Meio ambiente. Recebemos doações de livros, revistas, apostilas e outros objetos informacionais; e doamos estes materiais para todos os tipos de usuários que frequentam a nossa sede.
-</p>
+            </div>
+
+            <div className="text-gray-700 leading-relaxed space-y-5">
+
+              <p>
+                O projeto Livro em Movimento nasceu em 2018,
+                fruto da vontade de um grupo de educadores e
+                apaixonados por leitura que identificaram a
+                carência de acesso a livros em comunidades vulneráveis.
+              </p>
+
+              <p>
+                O que começou como uma pequena iniciativa de
+                arrecadação de livros em um bairro da periferia
+                de São Paulo, rapidamente se transformou em
+                um movimento social que hoje atende centenas
+                de famílias em diversos estados do Brasil.
+              </p>
+
+              <p>
+                Ao longo desses anos, distribuímos mais de
+                10 mil livros, criamos 50 pontos de leitura
+                comunitários e formamos uma rede de 150
+                voluntários dedicados.
+              </p>
+
+            </div>
+
+          </div>
 
         </div>
 
       </section>
 
-     
-      <section className="px-10 py-16 bg-gray-50">
+      {/* MISSÃO E VISÃO */}
+      <section className="px-10 pb-20">
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-[25px] p-10 shadow-md">
 
-            <h3 className="font-[Gloock] text-3xl font-bold mb-4">
+            <h3 className="font-[Gloock] text-4xl mb-6">
               Nossa missão
             </h3>
 
             <p className="text-gray-600 leading-relaxed">
-              Democratizar o acesso à leitura e à educação, promovendo inclusão social através dos livros.
+              Democratizar o acesso à leitura e à educação,
+              promovendo inclusão social através da distribuição
+              de livros e da criação de espaços de leitura em
+              comunidades carentes.
             </p>
 
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-[25px] p-10 shadow-md">
 
-            <h3 className="font-[Gloock] text-3xl font-bold mb-4">
+            <h3 className="font-[Gloock] text-4xl mb-6">
               Nossa Visão
             </h3>
 
             <p className="text-gray-600 leading-relaxed">
-              Ser referência nacional em projetos de incentivo à leitura.
+              Ser referência nacional em projetos de incentivo
+              à leitura, criando uma rede de pontos de leitura
+              acessíveis em todo o Brasil.
             </p>
 
           </div>
@@ -115,6 +137,74 @@ export default function Sobre() {
         </div>
 
       </section>
+
+    {/* VALORES */}
+<section className="px-6 md:px-10 pb-24">
+
+  <h2 className="font-[Gloock] text-5xl text-center mb-16">
+    Nossos valores
+  </h2>
+
+  <div className="flex flex-wrap justify-center gap-6">
+
+    {/* CARD 1 */}
+    <div className="bg-[#C1DFF8] w-[180px] h-[360px] rounded-[25px] p-7 shadow-md">
+
+      <h3 className="font-[Gloock] text-[28px] leading-none mb-10">
+        Amor <br />
+        pela <br />
+        leitura
+      </h3>
+
+      <p className="text-gray-700 text-[20px] leading-relaxed">
+        Acreditamos no poder transformador dos livros e da educação.
+      </p>
+
+    </div>
+
+    {/* CARD 2 */}
+    <div className="bg-[#355C84] text-white w-[180px] h-[360px] rounded-[25px] p-7 shadow-md">
+
+      <h3 className="font-[Gloock] text-[28px] leading-none mb-10">
+        Inclusão <br />
+        Social
+      </h3>
+
+      <p className="text-[20px] leading-relaxed">
+        Trabalhamos para democratizar o acesso ao conhecimento.
+      </p>
+
+    </div>
+
+    {/* CARD 3 */}
+    <div className="bg-[#C1DFF8] w-[180px] h-[360px] rounded-[25px] p-7 shadow-md">
+   <h3 className="font-[Gloock] text-[28px] leading-none mb-10">
+      Compro<br />
+       misso
+      </h3>
+
+      <p className="text-gray-700 text-[20px] leading-relaxed">
+        Dedicação total à nossa missão de transformar vidas.
+      </p>
+
+    </div>
+
+    {/* CARD 4 */}
+    <div className="bg-[#355C84] text-white w-[180px] h-[360px] rounded-[25px] p-7 shadow-md">
+
+      <h3 className="font-[Gloock] text-[28px] leading-none mb-10">
+      Transpa<br />
+     rência
+     </h3>
+      <p className="text-[20px] leading-relaxed">
+        Prestamos contas de todas as nossas ações e recursos.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
     </div>
   )

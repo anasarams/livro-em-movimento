@@ -13,7 +13,7 @@ import CTASection from './components/CTASection'
 import Sobre from './components/Sobre'
 import Voluntarios from './components/Voluntarios'
 import Noticias from './components/Noticias'
-
+import Biblioteca from './components/Biblioteca'
 function Home() {
   return (
     <>
@@ -31,24 +31,28 @@ export default function App() {
 
       <Header />
 
-      <Routes>
+     <Routes>
 
-        <Route path="/" element={<Home />} />
+  <Route path="/" element={<Home />} />
 
-        <Route path="/sobre" element={<Sobre />} />
+  <Route path="/sobre" element={<Sobre />} />
 
-        <Route
-          path="/voluntarios"
-          element={<Voluntarios />}
-        />
+  <Route
+    path="/voluntarios"
+    element={<Voluntarios />}
+  />
 
-        <Route
-          path="/noticias"
-          element={<Noticias />}
-        />
+  <Route
+    path="/noticias"
+    element={<Noticias />}
+  />
 
-      </Routes>
+  <Route
+    path="/biblioteca"
+    element={<Biblioteca />}
+  />
 
+</Routes>
       <Footer />
 
     </BrowserRouter>
