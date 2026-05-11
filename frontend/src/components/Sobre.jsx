@@ -2,13 +2,27 @@ import { useState, useEffect } from 'react'
 
 import voluntariosImage from '../assets/1.jpeg'
 
-import foto1 from '../assets/4.jpeg'
-import foto2 from '../assets/2.jpeg'
-import foto3 from '../assets/3.jpeg'
+import foto1 from '../assets/4.jpeg' 
+import foto2 from '../assets/2.jpeg' 
+import foto3 from '../assets/3.jpeg' 
+import foto4 from '../assets/5.jpeg' 
+import foto5 from '../assets/6.jpeg' 
+import foto6 from '../assets/7.jpeg' 
+import foto7 from '../assets/8.jpeg'
+import foto8 from '../assets/9.jpeg'
 
 export default function Sobre() {
 
-  const images = [foto1, foto2, foto3]
+const images = [
+  foto1,
+  foto2,
+  foto3,
+  foto4,
+  foto5,
+  foto6,
+  foto7,
+  foto8
+]
 
   const [currentImage, setCurrentImage] = useState(0)
 
