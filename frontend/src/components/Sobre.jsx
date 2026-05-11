@@ -85,26 +85,14 @@ const images = [
             <div className="text-gray-700 leading-relaxed space-y-5">
 
               <p>
-                O projeto Livro em Movimento nasceu em 2018,
-                fruto da vontade de um grupo de educadores e
-                apaixonados por leitura que identificaram a
-                carência de acesso a livros em comunidades vulneráveis.
+               A Associação Cultural Livro em Movimento, é uma ONG que tem como missão o incentivo à leitura, a Educação, a Cultura e Meio ambiente. Recebemos doações de livros, revistas, apostilas e outros objetos informacionais; e doamos estes materiais para todos os tipos de usuários que frequentam a nossa sede. Incentivamos a leitura com às doações de livros e com projetos que criamos ao longo do tempo, sempre partindo da leitura e do incentivo a leitura. Temos alguns projetos já implantados, como o Leitura cidadã, que consiste na montagem de salas de leituras em abrigos, comunidades e presídios, com a figura do mediador ou mediadora de leitura que deverá mostrar através de palestras a importância da leitura como fato transformador de vidas. Temos já implementado também, o Intervenções 
+               literárias que através da contação de
+                histórias e leituras dramatizadas de 
+                vários autores e doação de livros procuramos
+                 incentivar a leitura.
               </p>
 
-              <p>
-                O que começou como uma pequena iniciativa de
-                arrecadação de livros em um bairro da periferia
-                de São Paulo, rapidamente se transformou em
-                um movimento social que hoje atende centenas
-                de famílias em diversos estados do Brasil.
-              </p>
-
-              <p>
-                Ao longo desses anos, distribuímos mais de
-                10 mil livros, criamos 50 pontos de leitura
-                comunitários e formamos uma rede de 150
-                voluntários dedicados.
-              </p>
+              
 
             </div>
 
