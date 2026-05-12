@@ -5,14 +5,16 @@ export default function Header() {
 
   const location = useLocation()
 
-  // verifica se está na página inicial
-  const isHome = location.pathname === '/'
+  // páginas com header transparente
+  const transparentPages = ['/', '/sobre']
+
+  const isTransparent = transparentPages.includes(location.pathname)
 
   return (
     <header
       className={`w-full z-50 px-20 py-5 flex items-center justify-between transition duration-300
       ${
-        isHome
+        isTransparent
           ? 'absolute top-0 left-0 bg-transparent text-white'
           : 'bg-white text-black shadow-md'
       }`}

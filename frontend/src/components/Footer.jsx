@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
-    <footer className="bg-[#031B4E] text-white mt-20">
-      
+    <footer className="bg-[#031B4E] text-white">
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 px-12 py-14">
-        
+
         {/* Logo */}
         <div>
           <h2 className="font-[Gloock] text-4xl mb-4">
@@ -25,11 +27,37 @@ export default function Footer() {
           </h3>
 
           <ul className="space-y-2 text-gray-300">
-            <li>Início</li>
-            <li>Sobre nós</li>
-            <li>Doação</li>
-            <li>Biblioteca</li>
-            <li>Seja voluntário</li>
+
+            <li>
+              <Link to="/" className="hover:text-white transition">
+                Início
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/sobre" className="hover:text-white transition">
+                Sobre nós
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contato" className="hover:text-white transition">
+                Doação
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/biblioteca" className="hover:text-white transition">
+                Biblioteca
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/voluntarios" className="hover:text-white transition">
+                Seja voluntário
+              </Link>
+            </li>
+
           </ul>
         </div>
 
@@ -40,9 +68,12 @@ export default function Footer() {
           </h3>
 
           <ul className="space-y-2 text-gray-300">
-            <li>livroemmovimento@gmail.com</li>
-            <li>(21) 9000-0000</li>
-            <li>Niterói - RJ</li>
+            <li>aclivroemmovimento@gmail.com</li>
+            <li>(21) 98097-4799</li>
+            <li>
+              Terminal Rodoviário Presidente João Goulart,
+              Niterói, RJ, Brazil
+            </li>
           </ul>
         </div>
 
@@ -53,21 +84,31 @@ export default function Footer() {
           </h3>
 
           <p className="text-gray-300 mb-4">
-            Nos acompanhe nas redes
+            Nos acompanhe no facebook
           </p>
 
           <div className="flex gap-3">
-            <div className="w-8 h-8 bg-gray-300"></div>
-            <div className="w-8 h-8 bg-gray-300"></div>
-            <div className="w-8 h-8 bg-gray-300"></div>
+
+            <a
+              href="https://www.facebook.com/llivroemmovimento"
+             
+              rel="noreferrer"
+              className="w-8 h-8 bg-gray-300 rounded-full hover:scale-110 transition"
+            ></a>
+
+           
+
+            
+
           </div>
         </div>
       </div>
 
-      {/* Linha */}
-      <div className="border-t border-gray-500 py-6 text-center text-sm text-gray-300">
+      {/* Copyright */}
+      <div className="py-6 text-center text-sm text-gray-300">
         © 2026 Livro em Movimento. Todos os direitos reservados.
       </div>
+
     </footer>
   );
 }

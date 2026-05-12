@@ -113,7 +113,6 @@ export default function Biblioteca() {
 
       </section>
 
-      {/* CTA final */}
       <section className="bg-[#D8E8FA] py-20 text-center px-10">
 
         <h2 className="font-[Gloock] text-5xl font-bold mb-6">
