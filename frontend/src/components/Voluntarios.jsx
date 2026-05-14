@@ -4,23 +4,18 @@ export default function Voluntarios() {
   return (
     <div className="bg-[#F5F5F5] min-h-screen px-10 py-6">
 
-      {/* TÍTULO */}
       <h1 className="font-[Gloock] text-[52px] font-bold text-center mb-10">
         Voluntários
       </h1>
 
-      {/* CONTEÚDO */}
       <div className="flex justify-center gap-24 items-start">
 
-        {/* LADO ESQUERDO */}
         <div>
 
-          {/* EQUIPE */}
           <h2 className="font-[Gloock] text-[34px] font-bold text-center mb-8">
             Equipe
           </h2>
 
-          {/* CARD */}
           <div className="flex justify-center mb-14">
 
             <div className="bg-white shadow-md rounded-b-[12px] w-[140px] pb-4 text-center">
@@ -43,7 +38,6 @@ export default function Voluntarios() {
 
           </div>
 
-          {/* TEXTO */}
           <div className="max-w-[480px]">
 
             <h2 className="font-[Gloock] text-[52px] leading-[50px] font-bold mb-4">
@@ -62,7 +56,7 @@ export default function Voluntarios() {
 
         </div>
 
-        {/* CARD AZUL */}
+        
         <div className="bg-[#3E6485] w-[320px] h-[430px] rounded-[26px] shadow-xl px-8 py-8 mt-4">
 
           <h2 className="font-[Gloock] text-[42px] leading-[44px] font-bold mb-7 text-black">
