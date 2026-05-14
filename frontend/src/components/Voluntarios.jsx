@@ -1,75 +1,85 @@
+import joelpic from '../assets/joelpic.jpg'
+
 export default function Voluntarios() {
   return (
-    <div>
+    <div className="bg-[#F5F5F5] min-h-screen px-10 py-6">
 
-      <section className="bg-[#C1DFF8] py-12 px-10 text-center">
-        <h2 className="font-[Gloock] text-5xl font-bold mb-3">Voluntários</h2>
-        <p className="text-gray-600 text-lg">
-          Conheça quem faz parte do projeto Livro em Movimento
-        </p>
-      </section>
+      {/* TÍTULO */}
+      <h1 className="font-[Gloock] text-[52px] font-bold text-center mb-10">
+        Voluntários
+      </h1>
 
-      <section className="bg-[#C1DFF8] px-10 pb-16 flex justify-center">
-        <div className="w-full max-w-4xl bg-[#1B56AE] rounded-[20px] py-16 flex items-center justify-center shadow-2xl">
-          <h3 className="font-[Gloock] text-white text-4xl font-bold">
-            Nossa Equipe
-          </h3>
-        </div>
-      </section>
+      {/* CONTEÚDO */}
+      <div className="flex justify-center gap-24 items-start">
 
-      <section className="px-10 py-20 flex flex-col md:flex-row items-start gap-12 bg-white">
+        {/* LADO ESQUERDO */}
+        <div>
 
-        <div className="max-w-xl">
+          {/* EQUIPE */}
+          <h2 className="font-[Gloock] text-[34px] font-bold text-center mb-8">
+            Equipe
+          </h2>
 
-          <h3 className="font-[Gloock] text-xl font-bold mb-6">Equipe</h3>
+          {/* CARD */}
+          <div className="flex justify-center mb-14">
 
-          <div className="flex gap-6 mb-10">
+            <div className="bg-white shadow-md rounded-b-[12px] w-[140px] pb-4 text-center">
 
-            <div className="bg-white shadow-md rounded-[12px] p-4 text-center w-[120px]">
-              <div className="w-full h-[80px] bg-gray-300 mb-3 rounded"></div>
-              <p className="text-sm">Nome</p>
-            </div>
+              <img
+                src={joelpic}
+                alt="Joel Prata"
+                className="w-full h-[180px] object-cover mb-4"
+              />
 
-            <div className="bg-white shadow-md rounded-[12px] p-4 text-center w-[120px]">
-              <div className="w-full h-[80px] bg-gray-300 mb-3 rounded"></div>
-              <p className="text-sm">Nome</p>
-            </div>
+              <p className="font-[Gloock] text-[28px] leading-none">
+                Joel
+              </p>
 
-            <div className="bg-white shadow-md rounded-[12px] p-4 text-center w-[120px]">
-              <div className="w-full h-[80px] bg-gray-300 mb-3 rounded"></div>
-              <p className="text-sm">Nome</p>
+              <p className="text-[10px] text-gray-500 mt-1 px-2">
+                CEO da ONG Livro em Movimento
+              </p>
+
             </div>
 
           </div>
 
-          <h3 className="font-[Gloock] text-xl font-bold mb-4">
-            Faça parte da nossa equipe!
-          </h3>
+          {/* TEXTO */}
+          <div className="max-w-[480px]">
 
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-          </p>
+            <h2 className="font-[Gloock] text-[52px] leading-[50px] font-bold mb-4">
+              Faça parte da nossa equipe!
+            </h2>
 
-          <button className="bg-gray-300 px-8 py-3 rounded-full">
-          </button>
+            <p className="text-[12px] leading-[17px] text-black max-w-[430px]">
+              Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown
+              printer took a galley of type and scrambled it to make a
+              type specimen book.
+            </p>
+
+          </div>
 
         </div>
 
-        <div className="w-full md:w-[380px] bg-[#3E5F7C] rounded-[20px] shadow-xl p-8 text-white shrink-0">
+        {/* CARD AZUL */}
+        <div className="bg-[#3E6485] w-[320px] h-[430px] rounded-[26px] shadow-xl px-8 py-8 mt-4">
 
-          <h3 className="font-[Gloock] text-2xl font-bold mb-4">
+          <h2 className="font-[Gloock] text-[42px] leading-[44px] font-bold mb-7 text-black">
             História da Equipe
-          </h3>
+          </h2>
 
-          <p className="leading-relaxed">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          <p className="text-[12px] leading-[18px] text-black">
+            Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown
+            printer took a galley of type and scrambled it to make a
+            type specimen book.
           </p>
 
         </div>
 
-      </section>
+      </div>
 
     </div>
   )
