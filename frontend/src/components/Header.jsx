@@ -5,7 +5,6 @@ export default function Header() {
 
   const location = useLocation()
 
-  // páginas com header transparente
   const transparentPages = ['/', '/sobre']
 
   const isTransparent = transparentPages.includes(location.pathname)
@@ -71,7 +70,7 @@ export default function Header() {
           </li>
 
           <li>
-            <Link to="/contato" className="hover:opacity-70 transition">
+            <Link to="/doacao" className="hover:opacity-70 transition">
               Doação
             </Link>
           </li>
