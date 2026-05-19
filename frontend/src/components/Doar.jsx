@@ -1,6 +1,6 @@
 export default function Doacao() {
   return (
-    <div className="bg-[#F5F5F5] min-h-screen px-10 py-24">
+    <div className="bg-[#f8f8f8] min-h-screen px-10 py-24">
 
       <div className="mb-12">
 

@@ -16,7 +16,7 @@ export default function Biblioteca() {
   }, [])
 
   return (
-    <div className="bg-[#F5F5F5] min-h-screen">
+    <div className="bg-[#f8f8f8]">
 
       {/* Hero */}
       <section className="pt-28 pb-10 text-center">
@@ -113,6 +113,7 @@ export default function Biblioteca() {
 
       </section>
 
+      {/* CTA */}
       <section className="bg-[#D8E8FA] py-20 text-center px-10">
 
         <h2 className="font-[Gloock] text-5xl font-bold mb-6">

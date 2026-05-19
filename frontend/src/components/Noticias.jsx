@@ -1,6 +1,6 @@
 export default function Noticias() {
   return (
-    <div className="bg-[#F5F5F5] min-h-screen px-10 py-6">
+    <div className="bg-[#F8F8F8] min-h-screen px-10 py-6">
 
       <h1 className="font-[Gloock] text-[52px] font-bold text-center mb-10">
         Notícias
