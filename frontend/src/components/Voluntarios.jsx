@@ -2,65 +2,148 @@ import joelpic from '../assets/joelpic.jpg'
 
 export default function Voluntarios() {
   return (
-    <div className="bg-[#f8f8f8] min-h-screen px-10 py-6">
+    <div className="bg-[#f8f8f8] min-h-screen px-6 md:px-12 pt-36 pb-16">
 
-      <h1 className="font-[Gloock] text-[52px] font-bold text-center mb-10">
+      {/* Título */}
+      <h1 className="font-[Gloock] text-4xl md:text-6xl font-bold text-center mb-20">
         Voluntários
       </h1>
 
-      <div className="flex justify-center gap-24 items-start">
+      {/* Conteúdo Principal */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-center gap-16">
 
-        <div>
+        {/* Lado Esquerdo */}
+        <div className="flex flex-col items-center lg:items-start">
 
-          <h2 className="font-[Gloock] text-[34px] font-bold text-center mb-8">
-            Equipe
-          </h2>
+          {/* Equipe */}
+          <div className="w-full flex flex-col items-center">
 
-          <div className="flex justify-center mb-14">
+            <h2 className="font-[Gloock] text-3xl md:text-5xl font-bold text-center mb-10">
+              Equipe
+            </h2>
 
-            <div className="bg-white shadow-md rounded-b-[12px] w-[140px] pb-4 text-center">
+            {/* Card */}
+            <div className="bg-white rounded-[24px] overflow-hidden shadow-xl w-[260px] hover:scale-105 transition duration-300">
 
               <img
                 src={joelpic}
                 alt="Joel Prata"
-                className="w-full h-[180px] object-cover mb-4"
+                className="w-full h-[320px] object-cover"
               />
 
-              <p className="font-[Gloock] text-[28px] leading-none">
-                Joel
-              </p>
+              <div className="py-6 px-4 text-center">
 
-              <p className="text-[10px] text-gray-500 mt-1 px-2">
-                CEO da ONG Livro em Movimento
-              </p>
+                <p className="font-[Gloock] text-4xl leading-none mb-2">
+                  Joel
+                </p>
+
+                <p className="text-sm text-gray-500">
+                  CEO da ONG Livro em Movimento
+                </p>
+
+              </div>
 
             </div>
 
           </div>
 
-          <div className="max-w-[480px]">
+          {/* Texto */}
+          <div className="max-w-[520px] mt-16 text-center lg:text-left">
 
-            <h2 className="font-[Gloock] text-[52px] leading-[50px] font-bold mb-4">
+            <h2 className="font-[Gloock] text-4xl md:text-6xl leading-tight font-bold mb-6">
               Faça parte da nossa equipe!
             </h2>
 
-            <p className="text-[12px] leading-[17px] text-black max-w-[430px]">
-              ...
+            <p className="text-base leading-8 text-gray-700">
+              Faça parte do projeto Livro em Movimento e ajude a levar
+              educação, cultura e leitura para diversas comunidades.
+              Toda ajuda faz diferença e pode transformar vidas através
+              do conhecimento.
             </p>
+
+          </div>
+
+          {/* Formulário */}
+          <div className="bg-white w-full max-w-[500px] rounded-[28px] shadow-xl px-8 md:px-10 py-10 mt-14">
+
+            <h2 className="font-[Gloock] text-2xl md:text-3xl font-bold mb-8 text-center">
+              Formulário de Voluntário
+            </h2>
+
+            <form className="flex flex-col gap-5">
+
+              <div>
+                <label className="text-sm block mb-2 font-medium">
+                  Nome Completo*
+                </label>
+
+                <input
+                  type="text"
+                  className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm block mb-2 font-medium">
+                  Telefone
+                </label>
+
+                <input
+                  type="text"
+                  className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm block mb-2 font-medium">
+                  CPF
+                </label>
+
+                <input
+                  type="text"
+                  className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm block mb-2 font-medium">
+                  Área de Atuação
+                </label>
+
+                <input
+                  type="text"
+                  className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="bg-[#1B56AE] hover:bg-[#17478f] transition text-white text-base h-12 rounded-full mt-4 font-semibold"
+              >
+                Enviar Solicitação
+              </button>
+
+            </form>
 
           </div>
 
         </div>
 
-        
-        <div className="bg-[#3E6485] w-[320px] h-[430px] rounded-[26px] shadow-xl px-8 py-8 mt-4">
+        {/* História */}
+        <div className="bg-[#3E6485] w-full max-w-[420px] rounded-[32px] shadow-2xl px-8 md:px-10 py-12">
 
-          <h2 className="font-[Gloock] text-[42px] leading-[44px] font-bold mb-7 text-black">
+          <h2 className="font-[Gloock] text-4xl md:text-5xl leading-tight font-bold mb-8 text-white text-center lg:text-left">
             História da Equipe
           </h2>
 
-          <p className="text-[12px] leading-[18px] text-black">
-          ...
+          <p className="text-base leading-8 text-white/90 text-center lg:text-left">
+            O projeto Livro em Movimento surgiu com o objetivo de levar
+            acesso à leitura para pessoas em situação de vulnerabilidade,
+            promovendo educação, cultura e inclusão social através dos
+            livros e do trabalho voluntário.
+            <br /><br />
+            Nossa equipe acredita que a leitura transforma vidas,
+            amplia oportunidades e fortalece comunidades.
           </p>
 
         </div>
