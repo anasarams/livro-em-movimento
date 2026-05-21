@@ -18,14 +18,14 @@ export default function Biblioteca() {
   return (
     <div className="bg-[#f8f8f8]">
 
-      {/* Hero */}
+     
       <section className="pt-28 pb-10 text-center">
 
         <h1 className="font-[Gloock] text-6xl font-bold mb-8">
           Nossa Biblioteca
         </h1>
 
-        {/* Banner */}
+   
         <div className="bg-[#D8E8FA] max-w-6xl mx-auto rounded-lg px-8 py-6 text-left shadow-sm">
 
           <h2 className="font-[Gloock] text-3xl font-bold">
@@ -38,24 +38,12 @@ export default function Biblioteca() {
 
         </div>
 
-        {/* Busca */}
-        <div className="max-w-6xl mx-auto mt-6 flex gap-4">
-
-          <input
-            type="text"
-            placeholder="Buscar por título ou autor..."
-            className="flex-1 px-5 py-3 rounded-lg border border-gray-300 outline-none focus:ring-2 focus:ring-[#1B56AE]"
-          />
-
-          <select className="px-5 py-3 rounded-lg border border-gray-300 bg-white font-medium">
-            <option>Todas as categorias</option>
-          </select>
-
-        </div>
+    
+       
 
       </section>
 
-      {/* Grid de livros */}
+
       <section className="max-w-6xl mx-auto px-10 pb-24">
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
@@ -67,7 +55,7 @@ export default function Biblioteca() {
               className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition duration-300"
             >
 
-              {/* Imagem */}
+          
               <div className="w-full h-[260px] overflow-hidden rounded-xl bg-gray-100">
 
                 {livro.imagem ? (
@@ -84,7 +72,7 @@ export default function Biblioteca() {
 
               </div>
 
-              {/* Informações */}
+            
               <div className="mt-4">
 
                 <h3 className="font-semibold text-lg leading-tight mb-2">
@@ -113,7 +101,7 @@ export default function Biblioteca() {
 
       </section>
 
-      {/* CTA */}
+   
       <section className="bg-[#D8E8FA] py-20 text-center px-10">
 
         <h2 className="font-[Gloock] text-5xl font-bold mb-6">
