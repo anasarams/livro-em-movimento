@@ -7,17 +7,17 @@ export default function Hero() {
       className="relative h-screen flex items-center overflow-hidden"
     >
 
-      {/* Imagem de fundo */}
+      
       <img
         src={heroImage}
         alt="Livros e leitura"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Camada escura */}
+      
       <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Conteúdo */}
+     
       <div className="relative z-10 max-w-xl text-white px-10 md:px-20">
 
         <h2 className="font-[Gloock] text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -31,14 +31,14 @@ export default function Hero() {
 
         <div className="flex gap-4">
 
-          {/* Botão Doação */}
+          
           <Link to="/contato">
             <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl transition duration-300">
               Doar
             </button>
           </Link>
 
-          {/* Botão Facebook */}
+         
           <a
             href="https://www.facebook.com/llivroemmovimento"
             target="_blank"
