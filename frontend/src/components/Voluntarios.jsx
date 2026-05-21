@@ -1,6 +1,56 @@
+import { useState } from 'react'
 import joelpic from '../assets/joelpic.jpg'
 
 export default function Voluntarios() {
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    area_interesse: '',
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+
+      const response = await fetch('http://127.0.0.1:8000/voluntarios/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          area_interesse: [formData.area_interesse],
+        }),
+      })
+
+      if(response.ok) {
+
+        alert('Solicitação enviada com sucesso!')
+        setFormData({
+          nome: '',
+          email: '',
+          telefone: '',
+          area_interesse: '',
+        })
+      } 
+      else {
+        alert('Erro ao enviar.')
+      }
+
+    } catch (error) {
+
+      console.error(error)
+      alert('Erro no servidor.')
+
+    }
+  }
   return (
     <div className="bg-[#f8f8f8] min-h-screen px-6 md:px-12 pt-36 pb-16">
 
@@ -70,7 +120,10 @@ export default function Voluntarios() {
               Formulário de Voluntário
             </h2>
 
-            <form className="flex flex-col gap-5">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-5"
+            >
 
               <div>
                 <label className="text-sm block mb-2 font-medium">
@@ -79,6 +132,9 @@ export default function Voluntarios() {
 
                 <input
                   type="text"
+                  name="nome"
+                  value={formData.nome}
+                  onChange={handleChange}
                   className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
                 />
               </div>
@@ -90,17 +146,23 @@ export default function Voluntarios() {
 
                 <input
                   type="text"
+                  name="telefone"
+                  value={formData.telefone}
+                  onChange={handleChange}
                   className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
                 />
               </div>
 
               <div>
                 <label className="text-sm block mb-2 font-medium">
-                  CPF
+                  Email
                 </label>
 
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
                 />
               </div>
@@ -110,10 +172,27 @@ export default function Voluntarios() {
                   Área de Atuação
                 </label>
 
-                <input
-                  type="text"
+                <select
+                  name="area_interesse"
+                  value={formData.area_interesse}
+                  onChange={handleChange}
                   className="w-full h-12 bg-[#ECECEC] rounded-full px-5 outline-none focus:ring-2 focus:ring-[#1B56AE]"
-                />
+                >
+                  <option value="">Selecione uma área</option>
+                  <option value="Mídias">
+                    Mídias
+                  </option>
+                  <option value="Captação de Recursos">
+                    Captação de Recursos
+                  </option>
+                  <option value="Comunicação">
+                    Comunicação e Marketing
+                  </option>
+                  <option value="Planejamento">
+                    Planejamento
+                  </option>
+
+                </select>
               </div>
 
               <button

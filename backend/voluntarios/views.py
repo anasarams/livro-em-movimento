@@ -1,20 +1,40 @@
-from django.shortcuts import render
+import json
 
-# Create your views here.
-from django.shortcuts import render, redirect
-from .forms import VoluntariosForm
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
+from .models import Voluntarios, AreaInteresse
+
+
+@csrf_exempt
 def cadastrar_voluntario(request):
+
     if request.method == 'POST':
-        form = VoluntariosForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('voluntario_sucesso')
-    else:
-        form = VoluntariosForm()
 
-    return render(request, 'voluntarios/cadastro.html', {'form': form})
+        data = json.loads(request.body)
 
+        voluntario = Voluntarios.objects.create(
+            nome=data.get('nome', ''),
+            email=data.get('email', ''),
+            telefone=data.get('telefone', ''),
+        )
 
-def voluntario_sucesso(request):
-    return render(request, 'voluntarios/sucesso.html')
+        areas = data.get('area_interesse', [])
+
+        for area_nome in areas:
+
+            area, created = AreaInteresse.objects.get_or_create(
+                nome=area_nome
+            )
+
+            voluntario.area_interesse.add(area)
+
+        return JsonResponse(
+            {'mensagem': 'Voluntário cadastrado com sucesso!'},
+            status=201
+        )
+
+    return JsonResponse(
+        {'erro': 'Método não permitido'},
+        status=405
+    )
