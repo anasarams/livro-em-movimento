@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'core.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,19 +64,27 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug', 
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": DEBUG,  
+        "static_url_prefix": "dist",
+    }
+}
 
 
 # Database
@@ -136,8 +147,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'livro_em_movimento',
         'USER': 'root',
-        'PASSWORD': 'laiun123',
+        'PASSWORD': '0012300',
         'HOST': 'localhost',
         'PORT': '3306',
     }
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
