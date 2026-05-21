@@ -31,3 +31,6 @@ db.sqlite3
 .env
 staticfiles/
 media/
+.vite/
+node_modules/
+dist/
