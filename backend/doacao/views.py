@@ -1,19 +1,17 @@
-from django.shortcuts import render
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Doacao
 
-# Create your views here.
-from django.shortcuts import render, redirect
-from .forms import DoacaoForm
-
-def doar(request):
+@csrf_exempt 
+def receber_doacao(request):
     if request.method == 'POST':
-        form = DoacaoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('doacao_sucesso')
-    else:
-        form = DoacaoForm()
-
-    return render(request, 'doacao/doar.html', {'form': form})
-
-def doacao_sucesso(request):
-    return render(request, 'doacao/sucesso.html')
+        data = json.loads(request.body)
+        Doacao.objects.create(
+            nome=data.get('nome', ''),
+            email=data.get('email', ''),
+            telefone=data.get('telefone', ''),
+            quantidade_livros=data.get('quantidade_livros', 0),
+        )
+        return JsonResponse({'mensagem': 'Doação registrada!'}, status=201)
+    return JsonResponse({'erro': 'Método não permitido'}, status=405)
