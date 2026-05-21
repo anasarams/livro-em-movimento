@@ -1,18 +1,47 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
+import Footer from './components/Footer'
+
 import Hero from './components/Hero'
 import HelpSection from './components/HelpSection'
 import MissionSection from './components/MissionSection'
 import CTASection from './components/CTASection'
 
-export default function App() {
+import Sobre from './components/Sobre'
+import Voluntarios from './components/Voluntarios'
+import Noticias from './components/Noticias'
+import Biblioteca from './components/Biblioteca'
+import Doacao from './components/Doar'
+
+function Home() {
   return (
-    <div>
-      <Header />
+    <>
       <Hero />
       <HelpSection />
       <MissionSection />
       <CTASection />
-    </div>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="/voluntarios" element={<Voluntarios />} />
+        <Route path="/noticias" element={<Noticias />} />
+        <Route path="/biblioteca" element={<Biblioteca />} />
+        <Route path="/doacao" element={<Doacao />} />
+      </Routes>
+
+      <Footer />
+
+    </BrowserRouter>
   )
 }

@@ -1,6 +1,11 @@
+// CTASection.jsx
+
+import { Link } from 'react-router-dom'
+
 export default function CTASection() {
   return (
     <section className="bg-blue-100 py-20 px-10 text-center">
+
       <h2 className="font-[Gloock] text-5xl font-bold mb-6">
         Faça Parte Dessa Transformação
       </h2>
@@ -10,14 +15,15 @@ export default function CTASection() {
       </p>
 
       <div className="flex justify-center gap-6">
-        <button className="font-[Gloock] bg-white text-blue-900 px-8 py-3 rounded-xl shadow">
-          Doar
-        </button>
 
-        <button className="font-[Gloock] bg-white text-blue-900 px-8 py-3 rounded-xl shadow">
-          Seja voluntário
-        </button>
+        <Link to="/voluntarios">
+          <button className="font-[Gloock] bg-white text-[#1B56AE] px-8 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl transition duration-300">
+            Seja voluntário
+          </button>
+        </Link>
+
       </div>
+
     </section>
   )
 }

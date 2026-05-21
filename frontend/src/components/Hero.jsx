@@ -1,28 +1,58 @@
+import { Link } from 'react-router-dom'
+import heroImage from '../assets/trnava-university-BEEyeib-am8-unsplash.jpg'
+
 export default function Hero() {
   return (
-    <section className="bg-[#C1DFF8] px-10 py-16 flex flex-col md:flex-row items-center justify-between gap-10">
-      <div className="max-w-xl">
-    <h2 className="font-[Gloock] text-5xl font-bold mb-6">
-       Transformando vidas através da leitura
-      </h2>
+    <section
+      className="relative h-screen flex items-center overflow-hidden"
+    >
 
-        <p className="text-gray-700 mb-8 text-lg">
-          O projeto Livro em Movimento promove o acesso à leitura e educação
-          para comunidades carentes.
+      {/* Imagem de fundo */}
+      <img
+        src={heroImage}
+        alt="Livros e leitura"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Camada escura */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      {/* Conteúdo */}
+      <div className="relative z-10 max-w-xl text-white px-10 md:px-20">
+
+        <h2 className="font-[Gloock] text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Transformando vidas através da leitura
+        </h2>
+
+        <p className="mb-8 text-lg leading-relaxed">
+          Nossa missão é promover a inclusão e a justiça social através do incentivo à leitura, educação, cultura e a preservação do meio ambiente.
+          Você pode contribuir com nossos projetos.
         </p>
 
         <div className="flex gap-4">
-          <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow">
-            Doar
-          </button>
 
-          <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-2 rounded-lg shadow">
-            Contato
-          </button>
+          {/* Botão Doação */}
+          <Link to="/contato">
+            <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl transition duration-300">
+              Doar
+            </button>
+          </Link>
+
+          {/* Botão Facebook */}
+          <a
+            href="https://www.facebook.com/llivroemmovimento"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="font-[Gloock] bg-white text-[#1B56AE] px-6 py-3 rounded-xl shadow hover:bg-[#1B56AE] hover:text-white hover:shadow-xl transition duration-300">
+              Contato
+            </button>
+          </a>
+
         </div>
+
       </div>
 
-      <div className="w-full md:w-[500px] h-[250px] bg-[#1B56AE] rounded-[35px] shadow-2xl"></div>
     </section>
   )
 }

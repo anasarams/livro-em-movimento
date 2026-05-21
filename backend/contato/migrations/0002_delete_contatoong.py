@@ -9,8 +9,8 @@ class Migration(migrations.Migration):
         ('contato', '0001_initial'),
     ]
 
-    operations = [
-        migrations.DeleteModel(
-            name='ContatoONG',
-        ),
-    ]
+    # operations = [
+    #     migrations.DeleteModel(
+    #         name='ContatoONG',
+    #     ),
+    # python manage.py makemigrations --merge
