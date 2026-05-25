@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 import Hero from './components/Hero'
 import HelpSection from './components/HelpSection'
@@ -13,6 +14,7 @@ import Voluntarios from './components/Voluntarios'
 import Noticias from './components/Noticias'
 import Biblioteca from './components/Biblioteca'
 import Doacao from './components/Doar'
+import Contato from './components/Contato'
 
 function Home() {
   return (
@@ -38,9 +40,13 @@ export default function App() {
         <Route path="/noticias" element={<Noticias />} />
         <Route path="/biblioteca" element={<Biblioteca />} />
         <Route path="/doacao" element={<Doacao />} />
+
+        <Route path="/contato" element={<Navigate to="/doacao" replace />} />
       </Routes>
 
       <Footer />
+
+      <WhatsAppFloat />
 
     </BrowserRouter>
   )

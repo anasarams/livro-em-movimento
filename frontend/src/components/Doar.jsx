@@ -1,10 +1,15 @@
 import { useState } from 'react'
+import { useCopyToClipboard } from '../hooks/useCopyToClipboard'
+
+const CHAVE_PIX = 'contato@livrosemmovimento.org.br'
 
 export default function Doacao() {
   const [form, setForm] = useState({
     nome: '', email: '', telefone: '', endereco: '', quantidade_livros: ''
   })
   const [status, setStatus] = useState(null) // 'sucesso' | 'erro'
+
+  const { copiado: pixCopiado, copiar: copiarPix } = useCopyToClipboard()
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -27,9 +32,9 @@ export default function Doacao() {
 
   return (
     <div className="bg-[#f8f8f8] min-h-screen px-10 py-24">
-      <div className="mb-12">
+      <div className="mb-12 text-center">
         <h1 className="font-[Gloock] text-[52px] font-bold mb-4">Doe Livros</h1>
-        <p className="text-[18px] leading-[30px] text-black max-w-[700px]">
+        <p className="text-[18px] leading-[30px] text-black max-w-[700px] mx-auto">
           O projeto Livro em Movimento promove o acesso à leitura e
           educação para comunidades carentes, espalhando conhecimento e esperança.
         </p>
@@ -89,10 +94,31 @@ export default function Doacao() {
           <p className="text-[16px] leading-[28px] text-white mb-14">
             Prefere fazer uma doação em dinheiro? Use nossa chave Pix para contribuir diretamente com o projeto.
           </p>
-          <div className="bg-[#AAB9C5] w-[320px] h-[130px] rounded-[22px] shadow-md px-6 py-6">
-            <h3 className="font-[Gloock] text-[22px] font-bold mb-5 text-black">Chave Pix</h3>
-            <p className="text-[14px] text-black">contato@livrosemmovimento.org.br</p>
-          </div>
+          <button
+            type="button"
+            onClick={() => copiarPix(CHAVE_PIX)}
+            aria-label="Copiar chave Pix"
+            title="Clique para copiar a chave Pix"
+            className="bg-[#AAB9C5] w-[320px] min-h-[130px] rounded-[22px] shadow-md px-6 py-6 text-left cursor-pointer hover:brightness-105 active:scale-[0.98] transition-all"
+          >
+            <h3 className="font-[Gloock] text-[22px] font-bold mb-3 text-black">
+              Chave Pix
+            </h3>
+
+            {pixCopiado ? (
+              <p className="text-[14px] font-semibold text-green-700">
+                ✓ Chave copiada!
+              </p>
+            ) : (
+              <p className="text-[14px] text-black break-all">
+                {CHAVE_PIX}
+              </p>
+            )}
+
+            <p className="text-[11px] text-gray-600 mt-2">
+              {pixCopiado ? 'Cole no seu app de pagamento' : 'Clique para copiar'}
+            </p>
+          </button>
         </div>
       </div>
     </div>
