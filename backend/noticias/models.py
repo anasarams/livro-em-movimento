@@ -4,7 +4,7 @@ from django.db import models
 class Evento(models.Model):
     titulo = models.CharField(max_length=200)
     descricao = models.TextField()
-    data_hora = models.DateTimeField()
+    data_evento = models.DateTimeField()
     local = models.CharField(max_length=200)
     imagem = models.ImageField(upload_to='eventos/', null=True, blank=True)
     criado_em = models.DateTimeField(auto_now_add=True)
@@ -14,7 +14,7 @@ class Evento(models.Model):
     class Meta:
         verbose_name = "Evento"
         verbose_name_plural = "Eventos"
-        ordering = ['-data_hora']
+        ordering = ['-data_evento']
 
 class Noticia(models.Model):
     titulo = models.CharField(max_length=200)

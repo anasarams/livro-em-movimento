@@ -10,8 +10,8 @@ def lista_eventos(request):
     agora = timezone.now()
 
     noticias = Noticia.objects.all()
-    futuros = Evento.objects.filter(data_hora__gte=agora).order_by('data_hora')
-    passados = Evento.objects.filter(data_hora__lt=agora).order_by('-data_hora')
+    futuros = Evento.objects.filter(data_evento__gte=agora).order_by('data_evento')
+    passados = Evento.objects.filter(data_evento__lt=agora).order_by('-data_evento')
 
     return render(request, 'noticias/eventos.html', {
         'noticias': noticias,
@@ -31,10 +31,10 @@ def noticias_api(request):
     noticias_qs = Noticia.objects.all().values(
         'id', 'titulo', 'descricao', 'imagem', 'criado_em'
     )
-    futuros_qs = (
-        Evento.objects.filter(data_hora__gte=agora)
-        .order_by('data_hora')
-        .values('id', 'titulo', 'descricao', 'data_hora', 'local', 'imagem')
+    eventos_qs = (
+    Evento.objects.all()
+        .order_by('-data_evento')
+        .values('id', 'titulo', 'descricao', 'data_evento', 'local', 'imagem')
     )
 
     base_url = request.build_absolute_uri('/media/')
@@ -53,16 +53,19 @@ def noticias_api(request):
         for n in noticias_qs
     ]
 
-    futuros = [
+    eventos = [
         {
             'id': e['id'],
             'titulo': e['titulo'],
             'descricao': e['descricao'],
-            'data_hora': e['data_hora'],
+            'data_evento': e['data_evento'],
             'local': e['local'],
             'imagem_url': build_img(e['imagem']),
         }
-        for e in futuros_qs
+        for e in eventos_qs
     ]
 
-    return JsonResponse({'noticias': noticias, 'futuros': futuros})
+    return JsonResponse({
+        'noticias': noticias,
+        'eventos': eventos
+    })

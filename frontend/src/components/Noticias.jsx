@@ -1,36 +1,19 @@
-/**
- * Noticias.jsx
- *
- * Estratégia de renderização:
- *  1. Conteúdo fixo (FIXED_BLOCK) aparece imediatamente — sem esperar API.
- *  2. A fetch para o backend roda em paralelo, no background.
- *  3. Notícias dinâmicas são inseridas ABAIXO do conteúdo fixo quando chegam.
- *  4. Eventos futuros dinâmicos são listados ABAIXO do texto fixo do card lateral.
- *  5. Falha de API → aviso discreto, conteúdo fixo permanece intacto.
- *  6. Seção CTA (fundo azul) é estática e sempre visível ao final da página.
- */
+
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// ─── Endpoint ────────────────────────────────────────────────────────────────
 const API_URL = 'http://127.0.0.1:8000/noticias/api/'
 
-// ─── Conteúdo fixo da coluna esquerda ────────────────────────────────────────
-// Estes textos aparecem SEMPRE, antes de qualquer dado dinâmico.
 const FIXED_BLOCK = {
-  titulo: '"Evento"',
+  titulo: 'Eventos e Notícias',
   paragrafos: [
-    `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
-    `It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`,
+    `Aqui você encontra as últimas notícias sobre o projeto, além de eventos futuros relacionados à leitura e educação. Fique por dentro e participe!`,
   ],
-  extra: `It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets`,
 }
 
-// Texto fixo do card lateral (aparece antes dos eventos dinâmicos)
-const FUTUROS_FIXO = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+const FUTUROS_FIXO = `Fique por dentro dos nossos próximos eventos! Estamos sempre organizando atividades para promover a leitura e a educação. Confira também as nossas redes sociais!`
 
-// ─── Helpers ─────────────────────────────────────────────────────────────────
 function formatDate(iso) {
   if (!iso) return ''
   return new Date(iso).toLocaleDateString('pt-BR', {
@@ -51,12 +34,10 @@ function formatDateTime(iso) {
   })
 }
 
-// ─── Componente ──────────────────────────────────────────────────────────────
 export default function Noticias() {
-  // Estado dinâmico: começa vazio, nunca bloqueia a renderização inicial
   const [noticias, setNoticias] = useState([])
-  const [futuros, setFuturos]   = useState([])
-  const [apiStatus, setApiStatus] = useState('idle') // 'idle' | 'loading' | 'done' | 'error'
+  const [eventos, setEventos] = useState([])
+  const [apiStatus, setApiStatus] = useState('idle')
   const [apiError, setApiError]   = useState(null)
 
   useEffect(() => {
@@ -68,7 +49,7 @@ export default function Noticias() {
       })
       .then((data) => {
         setNoticias(data.noticias || [])
-        setFuturos(data.futuros  || [])
+        setEventos(data.eventos || [])
         setApiStatus('done')
       })
       .catch((err) => {
@@ -113,26 +94,22 @@ export default function Noticias() {
               </p>
             </div>
 
-            {/* 3. Divisor antes do conteúdo dinâmico (só aparece se houver algo) */}
             {(apiStatus === 'loading' || noticias.length > 0) && (
               <hr className="border-gray-200 mb-8" />
             )}
 
-            {/* 4. Indicador de carregamento — apenas nesta área, não na tela toda */}
             {apiStatus === 'loading' && (
               <p className="text-[12px] text-gray-400 italic mb-6">
                 Carregando notícias cadastradas…
               </p>
             )}
 
-            {/* 5. Aviso de erro da API — discreto */}
             {apiStatus === 'error' && (
               <p className="text-[11px] text-amber-600 italic mb-6">
-                ⚠️ {apiError} Os textos acima permanecem disponíveis.
+                {apiError} Os textos acima permanecem disponíveis.
               </p>
             )}
 
-            {/* 6. Notícias dinâmicas do admin — abaixo dos textos fixos */}
             {noticias.map((noticia) => (
               <article key={noticia.id} className="mb-12">
 
@@ -158,10 +135,39 @@ export default function Noticias() {
 
               </article>
             ))}
+            {eventos.map((evento) => (
+              <article key={evento.id} className="mb-12">
+
+                {evento.imagem_url && (
+                  <img
+                    src={evento.imagem_url}
+                    alt={evento.titulo}
+                    className="w-full max-h-[280px] object-cover rounded-[16px] mb-4"
+                  />
+                )}
+
+                <h2 className="font-[Gloock] text-[36px] leading-none font-bold mb-2">
+                  {evento.titulo}
+                </h2>
+
+                <p className="text-[11px] text-gray-400 mb-3">
+                  {formatDateTime(evento.data_evento)}
+                </p>
+
+                {evento.local && (
+                  <p className="text-[12px] text-gray-500 mb-3">
+                    {evento.local}
+                  </p>
+                )}
+
+                <p className="text-[13px] leading-[20px] text-black whitespace-pre-line">
+                  {evento.descricao}
+                </p>
+
+              </article>
+            ))}
 
           </div>
-
-          {/* ── Card lateral: Futuros Projetos ──────────────────────────── */}
           <div className="bg-[#B7D5EE] w-[310px] h-fit rounded-[26px] shadow-xl px-8 py-8 mt-1 flex-shrink-0">
 
             <h2 className="font-[Gloock] text-[40px] leading-[42px] font-bold text-black mb-6">
@@ -172,33 +178,6 @@ export default function Noticias() {
             <p className="text-[12px] leading-[17px] text-black mb-6">
               {FUTUROS_FIXO}
             </p>
-
-            {/* Eventos dinâmicos abaixo do texto fixo */}
-            {futuros.length > 0 && (
-              <div className="mt-4 flex flex-col gap-4">
-                {futuros.map((evento) => (
-                  <div
-                    key={evento.id}
-                    className="border-t border-blue-300 pt-4"
-                  >
-                    <h3 className="font-[Gloock] text-[15px] font-bold mb-1">
-                      {evento.titulo}
-                    </h3>
-                    <p className="text-[10px] text-gray-600 mb-1">
-                      📅 {formatDateTime(evento.data_hora)}
-                    </p>
-                    {evento.local && (
-                      <p className="text-[10px] text-gray-600 mb-1">
-                        📍 {evento.local}
-                      </p>
-                    )}
-                    <p className="text-[11px] leading-[15px] text-black">
-                      {evento.descricao}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
 
             {/* Indicador sutil dentro do card enquanto carrega */}
             {apiStatus === 'loading' && (

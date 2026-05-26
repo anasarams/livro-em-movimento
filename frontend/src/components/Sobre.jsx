@@ -158,13 +158,13 @@ export default function Sobre() {
     Nossos valores
   </h2>
 
-  <div className="flex flex-wrap justify-center gap-8">
+  <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
 
     {/* CARD 1 */}
-    <div className="bg-[#C1DFF8] w-[240px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
+    <div className="bg-[#C1DFF8] w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
-        Amor pela leitura
+        Amor
       </h3>
 
       <p className="text-gray-700 text-base leading-7 text-left">
@@ -174,10 +174,10 @@ export default function Sobre() {
     </div>
 
     {/* CARD 2 */}
-    <div className="bg-[#355C84] text-white w-[240px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
+    <div className="bg-[#355C84] text-white w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
-        Inclusão Social
+        Inclusão
       </h3>
 
       <p className="text-base leading-7 text-left">
@@ -187,10 +187,10 @@ export default function Sobre() {
     </div>
 
     {/* CARD 3 */}
-    <div className="bg-[#C1DFF8] w-[240px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
+    <div className="bg-[#C1DFF8] w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
-     Compro<br /> misso 
+     Compromisso 
       </h3>
 
       <p className="text-gray-700 text-base leading-7 text-left">
@@ -200,10 +200,10 @@ export default function Sobre() {
     </div>
 
     {/* CARD 4 */}
-    <div className="bg-[#355C84] text-white w-[240px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
+    <div className="bg-[#355C84] text-white w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
-        Transpa<br /> rência 
+        Transparência 
       </h3>
 
       <p className="text-base leading-7 text-left">

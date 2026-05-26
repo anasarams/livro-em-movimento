@@ -9,5 +9,4 @@ export default defineConfig({
     emptyOutDir: true,
     manifest: true,
   },
-  base: '/static/dist/',
 })

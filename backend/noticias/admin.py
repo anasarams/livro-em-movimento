@@ -1,10 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
 from .models import Evento, Noticia
 
 class EventoAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'data_hora', 'local')
+    list_display = ('titulo', 'data_evento', 'local')
 
 class NoticiaAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'criado_em')
