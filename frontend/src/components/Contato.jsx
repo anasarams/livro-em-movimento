@@ -23,7 +23,7 @@ function FacebookIcon({ size = 22 }) {
   )
 }
 
-// Ícone WhatsApp SVG inline
+
 function WhatsAppIcon({ size = 22 }) {
   return (
     <svg
