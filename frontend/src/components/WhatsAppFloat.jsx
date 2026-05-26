@@ -1,15 +1,4 @@
-/**
- * WhatsAppFloat.jsx
- *
- * Botão flutuante global de WhatsApp.
- * - Fica fixo no canto inferior direito da tela em todas as páginas.
- * - Acompanha o scroll sem mover.
- * - Abre o WhatsApp da ONG em nova aba ao clicar.
- * - Acessível: aria-label, área de clique de 56px (recomendação WCAG).
- * - Responsivo: mesmo comportamento em desktop e mobile.
- * - z-index alto (z-50) para ficar acima de outros elementos,
- *   mas abaixo de modais/drawers (z-[60]+).
- */
+
 
 import { WHATSAPP_URL } from '../constants'
 
@@ -54,19 +43,19 @@ export default function WhatsAppFloat() {
       aria-label="Fale conosco pelo WhatsApp"
       title="Fale conosco pelo WhatsApp"
       className={[
-        // Posicionamento fixo — acompanha scroll
+    
         'fixed bottom-6 right-6 z-50',
-        // Tamanho e forma
+      
         'w-14 h-14 rounded-full',
-        // Cor WhatsApp
+      
         'bg-[#25D366] text-white',
-        // Centralizar ícone
+      
         'flex items-center justify-center',
-        // Sombra proeminente para destacar sobre o conteúdo
+        
         'shadow-[0_4px_20px_rgba(37,211,102,0.5)]',
-        // Hover
+       
         'hover:bg-[#1ea855] hover:scale-110',
-        // Transição suave
+      
         'transition-all duration-200',
       ].join(' ')}
     >

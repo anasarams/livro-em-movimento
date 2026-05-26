@@ -99,10 +99,10 @@ export default function Contato() {
 
       <div className="flex justify-center gap-16 items-start flex-wrap mt-4">
 
-        {/* Coluna esquerda: cards de contato */}
+       
         <div className="flex flex-col gap-6 max-w-[420px] w-full">
 
-          {/* Card WhatsApp */}
+        
           <a
             href={whatsappUrl}
             target="_blank"
@@ -126,14 +126,13 @@ export default function Contato() {
             </div>
           </a>
 
-          {/* Card E-mail */}
           <a
             href={mailtoUrl}
             aria-label={`Enviar e-mail para ${email}`}
             className="flex items-center gap-5 bg-white rounded-[22px] shadow-md px-8 py-6 hover:scale-[1.02] hover:shadow-lg transition border border-gray-100"
           >
             <span className="flex-shrink-0 text-[#1B56AE]">
-              {/* Ícone Envelope */}
+          
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width={36} height={36} aria-hidden="true">
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928
                   5.493a3 3 0 01-3.144 0L1.5 8.67z" />
@@ -151,7 +150,7 @@ export default function Contato() {
             </div>
           </a>
 
-          {/* Card Facebook */}
+         
           <a
             href={FACEBOOK_URL}
             target="_blank"
@@ -174,7 +173,7 @@ export default function Contato() {
 
         </div>
 
-        {/* Coluna direita: endereço e horário */}
+  
         <div className="bg-[#B7D5EE] w-[340px] rounded-[26px] shadow-xl px-8 py-8 flex-shrink-0">
 
           <h2 className="font-[Gloock] text-[32px] leading-[36px] font-bold text-black mb-6">

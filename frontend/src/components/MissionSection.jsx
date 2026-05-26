@@ -5,14 +5,14 @@ export default function MissionSection() {
   return (
     <section className="px-10 py-20 flex flex-col md:flex-row items-center gap-16">
 
-      {/* Imagem */}
+  
       <img
         src={missionImage}
         alt="Nossa missão"
         className="w-full md:w-[500px] h-[400px] object-cover rounded-[35px] shadow-2xl"
       />
 
-      {/* Texto */}
+ 
       <div className="max-w-2xl">
 
         <h2 className="font-[Gloock] text-5xl font-bold mb-6">
@@ -24,7 +24,7 @@ export default function MissionSection() {
           leitura e educação.
         </p>
 
-        {/* Botão com link */}
+     
         <Link to="/sobre">
           <button className="bg-[#1B56AE] text-white px-8 py-3 rounded-xl shadow hover:bg-white hover:text-[#1B56AE] hover:shadow-xl transition duration-300">
             Conheça nossa história

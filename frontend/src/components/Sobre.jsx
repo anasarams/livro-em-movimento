@@ -39,7 +39,6 @@ export default function Sobre() {
   return (
     <div className="bg-[#F8F8F8]">
 
-      {/* HERO */}
       <section
         className="relative h-screen bg-cover bg-center flex items-center"
         style={{
@@ -47,10 +46,10 @@ export default function Sobre() {
         }}
       >
 
-        {/* Overlay escuro */}
+     
         <div className="absolute inset-0 bg-black/50"></div>
 
-        {/* Conteúdo */}
+    
         <div className="relative z-10 max-w-7xl mx-auto px-10 text-white">
 
           <h2 className="font-[Gloock] text-7xl mb-6">
@@ -66,7 +65,7 @@ export default function Sobre() {
 
       </section>
 
-      {/* HISTÓRIA */}
+
       <section className="px-10 py-20">
 
         <div className="bg-[#C1DFF8] rounded-[30px] p-10 shadow-lg max-w-6xl mx-auto">
@@ -113,7 +112,7 @@ export default function Sobre() {
 
       </section>
 
-      {/* MISSÃO E VISÃO */}
+      
       <section className="px-10 pb-20">
 
         <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -151,7 +150,7 @@ export default function Sobre() {
 
       </section>
 
-     {/* VALORES */}
+    
 <section className="px-6 md:px-10 pb-24">
 
   <h2 className="font-[Gloock] text-5xl text-center mb-16">
@@ -173,7 +172,7 @@ export default function Sobre() {
 
     </div>
 
-    {/* CARD 2 */}
+   
     <div className="bg-[#355C84] text-white w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
@@ -186,7 +185,7 @@ export default function Sobre() {
 
     </div>
 
-    {/* CARD 3 */}
+   
     <div className="bg-[#C1DFF8] w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">
@@ -199,7 +198,7 @@ export default function Sobre() {
 
     </div>
 
-    {/* CARD 4 */}
+   
     <div className="bg-[#355C84] text-white w-[260px] min-h-[320px] rounded-[25px] p-8 shadow-md flex flex-col">
 
       <h3 className="font-[Gloock] text-3xl mb-6 text-left leading-tight">

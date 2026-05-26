@@ -60,21 +60,20 @@ export default function Noticias() {
 
   return (
     <>
-      {/* ── Área principal ──────────────────────────────────────────────── */}
+     
       <div className="bg-[#F8F8F8] min-h-screen px-10 py-6">
 
-        {/* Título */}
+       
         <h1 className="font-[Gloock] text-[52px] font-bold text-center mb-10">
           Notícias
         </h1>
 
-        {/* Layout de duas colunas */}
         <div className="flex justify-center gap-20 items-start flex-wrap">
 
-          {/* ── Coluna esquerda ────────────────────────────────────────── */}
+     
           <div className="max-w-[640px] flex-1 min-w-[280px]">
 
-            {/* 1. Bloco fixo — renderiza imediatamente */}
+           
             <div className="mb-12">
               <h2 className="font-[Gloock] text-[42px] leading-none font-bold mb-3">
                 {FIXED_BLOCK.titulo}
@@ -87,7 +86,7 @@ export default function Noticias() {
               ))}
             </div>
 
-            {/* 2. Segundo parágrafo fixo */}
+        
             <div className="mb-12">
               <p className="text-[12px] leading-[17px] text-black max-w-[620px]">
                 {FIXED_BLOCK.extra}
@@ -174,12 +173,12 @@ export default function Noticias() {
               Futuros Projetos
             </h2>
 
-            {/* Texto fixo do card — sempre visível */}
+       
             <p className="text-[12px] leading-[17px] text-black mb-6">
               {FUTUROS_FIXO}
             </p>
 
-            {/* Indicador sutil dentro do card enquanto carrega */}
+            
             {apiStatus === 'loading' && (
               <p className="text-[10px] text-gray-500 italic mt-4">
                 Buscando eventos…
@@ -191,7 +190,7 @@ export default function Noticias() {
         </div>
       </div>
 
-      {/* ── Seção CTA inferior ──────────────────────────────────────────────── */}
+      
       <section className="bg-blue-100 py-20 px-10 text-center">
 
         <h2 className="font-[Gloock] text-[40px] md:text-[48px] font-bold mb-5">

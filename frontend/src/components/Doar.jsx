@@ -88,7 +88,7 @@ export default function Doacao() {
           </form>
         </div>
 
-        {/* Pix — igual ao original */}
+      
         <div className="bg-[#3E6485] w-[430px] h-[420px] rounded-[30px] shadow-xl px-12 py-12">
           <h2 className="font-[Gloock] text-[32px] font-bold text-white mb-8">Doação via Pix</h2>
           <p className="text-[16px] leading-[28px] text-white mb-14">

@@ -14,7 +14,7 @@ export default function HelpSection() {
 
       <div className="grid md:grid-cols-3 gap-8">
 
-        {/* Doação */}
+   
         <div className="rounded-xl p-6 text-left shadow-sm bg-white hover:shadow-md transition">
 
           <h3 className="font-[Gloock] text-2xl font-semibold mb-4">
@@ -34,7 +34,6 @@ export default function HelpSection() {
 
         </div>
 
-        {/* Voluntários */}
         <div className="rounded-xl p-6 text-left shadow-sm bg-white hover:shadow-md transition">
 
           <h3 className="font-[Gloock] text-2xl font-semibold mb-4">
@@ -54,7 +53,7 @@ export default function HelpSection() {
 
         </div>
 
-        {/* Sobre */}
+      
         <div className="rounded-xl p-6 text-left shadow-sm bg-white hover:shadow-md transition">
 
           <h3 className="font-[Gloock] text-2xl font-semibold mb-4">
