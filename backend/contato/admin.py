@@ -8,14 +8,6 @@ from .models import ContactSettings
 
 @admin.register(ContactSettings)
 class ContactSettingsAdmin(admin.ModelAdmin):
-    """
-    Admin do singleton de configurações de contato.
-
-    - Garante que só exista um registro (não permite adicionar outro
-      nem excluir o existente).
-    - Mostra previews dos links gerados para facilitar a conferência.
-    """
-
     list_display = ("email", "whatsapp", "atualizado_em")
     readonly_fields = ("atualizado_em", "preview_mailto", "preview_whatsapp")
     fieldsets = (
@@ -33,9 +25,6 @@ class ContactSettingsAdmin(admin.ModelAdmin):
         ("Auditoria", {"fields": ("atualizado_em",)}),
     )
 
-    # ------------------------------------------------------------------
-    # Singleton: bloqueia adicionar/excluir
-    # ------------------------------------------------------------------
     def has_add_permission(self, request):
         return not ContactSettings.objects.exists()
 
@@ -43,10 +32,6 @@ class ContactSettingsAdmin(admin.ModelAdmin):
         return False
 
     def changelist_view(self, request, extra_context=None):
-        """
-        Atalho: se já existir o registro, vai direto para a edição
-        em vez de mostrar a lista.
-        """
         obj = ContactSettings.objects.first()
         if obj is not None:
             url = reverse(
@@ -57,9 +42,6 @@ class ContactSettingsAdmin(admin.ModelAdmin):
             return HttpResponseRedirect(url)
         return super().changelist_view(request, extra_context)
 
-    # ------------------------------------------------------------------
-    # Previews
-    # ------------------------------------------------------------------
     @admin.display(description="Link de e-mail (mailto:)")
     def preview_mailto(self, obj):
         if not obj or not obj.pk:

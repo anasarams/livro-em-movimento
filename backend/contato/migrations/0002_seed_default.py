@@ -1,8 +1,3 @@
-"""
-Cria o registro singleton inicial de ContactSettings com os defaults
-(e-mail e WhatsApp padrão da organização). Idempotente.
-"""
-
 from django.db import migrations
 
 
